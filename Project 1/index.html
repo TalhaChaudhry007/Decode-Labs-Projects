@@ -4,137 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DecodeLabs | Project 1</title>
-</head>
-<body>
-    <h1>Coming soon</h1>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DecodeLabs | Project 1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
         :root {
-            --mocha: #A5856E;
-            --mocha-dark: #7a5f4f;
-            --blue: #A0D4E0;
-            --blue-dark: #6ab8cc;
-            --grey: #F2F0EA;
-            --grey-mid: #d8d5cc;
-            --dark: #2b2319;
-            --muted: #6b5e54;
-            --white: #ffffff;
-            --shadow: 0 4px 24px rgba(43,35,25,0.10);
-            --shadow-lg: 0 10px 40px rgba(43,35,25,0.16);
-            --radius: 14px;
-            --nav-h: 64px;
-            --ease: 0.28s cubic-bezier(.4,0,.2,1);
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--grey);
-            color: var(--dark);
-            line-height: 1.65;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 6vw, 3.8rem);
-            font-weight: 700;
-        }
-
-        h2 {
-            font-size: clamp(1.5rem, 4vw, 2.6rem);
-            font-weight: 700;
-        }
-
-        p {
-            font-size: clamp(0.93rem, 1.8vw, 1.02rem);
-            font-weight: 300;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 92%;
-            max-width: 1180px;
-            margin-inline: auto;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(26px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-9px);
-            }
-        }
-
-        .anim-fade-up {
-            animation: fadeUp 0.65s ease both;
-        }
-
-        .delay-1 {
-            animation-delay: 0.12s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.24s;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(22px);
-            transition: opacity 0.55s ease, transform 0.55s ease;
-        }
-
-            .reveal.visible {
-                opacity: 1;
-                transform: none;
-            }
+  --mocha:      #A5856E;
+  --mocha-dark: #7a5f4f;
+  --blue:       #A0D4E0;
+  --blue-dark:  #6ab8cc;
+  --grey:       #F2F0EA;
+  --grey-mid:   #d8d5cc;
+  --dark:       #2b2319;
+  --muted:      #6b5e54;
+  --white:      #ffffff;
+  --shadow:     0 4px 24px rgba(43,35,25,0.10);
+  --shadow-lg:  0 10px 40px rgba(43,35,25,0.16);
+  --radius:     14px;
+  --nav-h:      64px;
+  --ease:       0.28s cubic-bezier(.4,0,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--grey);
+  color: var(--dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+h1 { font-size: clamp(2rem, 6vw, 3.8rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.6rem); font-weight: 700; }
+p  { font-size: clamp(0.93rem, 1.8vw, 1.02rem); font-weight: 300; }
+a  { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { width: 92%; max-width: 1180px; margin-inline: auto; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(26px); } to { opacity:1; transform:translateY(0); } }
+@keyframes float  { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-9px); } }
+.anim-fade-up { animation: fadeUp 0.65s ease both; }
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+.reveal { opacity:0; transform:translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.visible { opacity:1; transform:none; }
     </style>
 </head>
 <body>
@@ -160,14 +72,72 @@
         <a href="#stats">Stats</a>
         <a href="#contact">Contact</a>
     </div>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-text anim-fade-up">
+                        <p class="hero-eyebrow">DecodeLabs · Batch 2026</p>
+                        <h1>Build. Ship.<br><em>Get Hired.</em></h1>
+                        <p>A hands-on full stack internship turning students into real developers.</p>
+                        <div class="hero-cta">
+                            <a href="#features" class="btn btn-primary">Explore Projects</a>
+                            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual anim-fade-up delay-2">
+                        <div class="hero-card">
+                            <div class="hc-icon hc-blue">🎨</div>
+                            <h4>Frontend</h4><p>HTML · CSS · JS</p>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hc-icon hc-mocha">⚙️</div>
+                            <h4>Backend</h4><p>Node · Express</p>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hc-icon hc-grey">🗄️</div>
+                            <h4>Database</h4><p>Coming soon</p>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hc-icon hc-blue">🚀</div>
+                            <h4>Deploy</h4><p>Live projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        var hamburger = document.getElementById('hamburger');
-        var drawer = document.getElementById('nav-drawer');
-        hamburger.addEventListener('click', function() {
-        drawer.classList.toggle('open');
-        });
-    </script>
+        <section id="features">
+            <div class="container">
+                <p class="section-label reveal">What You Build</p>
+                <h2 class="section-title reveal">Real Projects. Real Skills.</h2>
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <div class="fc-icon">🖥️</div>
+                        <h3>Responsive UI</h3>
+                        <p>Build interfaces that work on every screen without using any CSS framework.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="fc-icon">🔌</div>
+                        <h3>REST APIs</h3>
+                        <p>Design and build backend endpoints that handle real data and return proper responses.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="fc-icon">✅</div>
+                        <h3>Validation</h3>
+                        <p>Learn why you never trust the client and always validate on the server side.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            var hamburger = document.getElementById('hamburger');
+            var drawer = document.getElementById('nav-drawer');
+            hamburger.addEventListener('click', function() {
+            drawer.classList.toggle('open');
+            });
+        </script>
 
 </body>
 </html>
