@@ -113,23 +113,67 @@ ul { list-style: none; }
                 <h2 class="section-title reveal">Real Projects. Real Skills.</h2>
                 <div class="features-grid">
                     <div class="feature-card reveal">
-                        <div class="fc-icon">🖥️</div>
+                        <div class="fc-icon"></div>
                         <h3>Responsive UI</h3>
                         <p>Build interfaces that work on every screen without using any CSS framework.</p>
                     </div>
                     <div class="feature-card reveal">
-                        <div class="fc-icon">🔌</div>
+                        <div class="fc-icon"></div>
                         <h3>REST APIs</h3>
                         <p>Design and build backend endpoints that handle real data and return proper responses.</p>
                     </div>
                     <div class="feature-card reveal">
-                        <div class="fc-icon">✅</div>
+                        <div class="fc-icon"></div>
                         <h3>Validation</h3>
                         <p>Learn why you never trust the client and always validate on the server side.</p>
                     </div>
                 </div>
             </div>
         </section>
+        <section id="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h2 id="stat-interns">0+</h2>
+                        <p>Interns Trained</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2 id="stat-projects">0+</h2>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2 id="stat-hours">0+</h2>
+                        <p>Coding Hours</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2 id="stat-badges">0+</h2>
+                        <p>Badges Earned</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function countUp(el, target, duration) {
+            var start = performance.now();
+            (function tick(now) {
+            var p = Math.min((now - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target).toLocaleString() + '+';
+            if (p < 1) { requestAnimationFrame(tick); }
+            else { el.textContent = target.toLocaleString() + '+'; }
+            })(start);
+            }
+            var statsDone = false;
+            new IntersectionObserver(function(entries) {
+            if (!entries[0].isIntersecting || statsDone) return;
+            statsDone = true;
+            countUp(document.getElementById('stat-interns'),  120, 1500);
+            countUp(document.getElementById('stat-projects'), 340, 1700);
+            countUp(document.getElementById('stat-hours'),   2400, 1900);
+            countUp(document.getElementById('stat-badges'),   280, 1600);
+            }, { threshold: 0.35 }).observe(document.getElementById('stats'));
+        </script>
 
         <script>
             var hamburger = document.getElementById('hamburger');
