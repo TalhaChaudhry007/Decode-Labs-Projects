@@ -45,4 +45,37 @@ router.post('/', (req, res) => {
   res.status(201).json({ success: true, message: 'User created', data: newUser });
 });
 
+router.put('/:id', (req, res) => {
+  const user = users.find((u) => u.id === parseInt(req.params.id));
+  if (!user) {
+    return res.status(404).json({ success: false, message: 'User not found' });
+  }
+  const { name, email, age } = req.body;
+  if (name !== undefined) user.name = name.trim();
+  if (email !== undefined) {
+    if (!validateEmail(email)) {
+      return res.status(400).json({ success: false, message: 'Invalid email format' });
+    }
+    user.email = email.toLowerCase();
+  }
+  if (age !== undefined) {
+    if (!validateAge(age)) {
+      return res.status(400).json({ success: false, message: 'Age must be between 1 and 120' });
+    }
+    user.age = Number(age);
+  }
+  res.status(200).json({ success: true, message: 'User updated', data: user });
+});
+
+router.delete('/:id', (req, res) => {
+  const index = users.findIndex((u) => u.id === parseInt(req.params.id));
+  if (index === -1) {
+    return res.status(404).json({ success: false, message: 'User not found' });
+  }
+  users.splice(index, 1);
+  res.status(204).send();
+});
+
+module.exports = router;
+
 module.exports = router;
