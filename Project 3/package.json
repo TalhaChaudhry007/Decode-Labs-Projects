@@ -1,0 +1,18 @@
+{
+	"name": "decodelabs-project3",
+	"version": "1.0.0",
+	"description": "Project 3 – Database Integration (DecodeLabs Full Stack Training)",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"sql.js": "^1.11.0"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.0"
+	}
+}
