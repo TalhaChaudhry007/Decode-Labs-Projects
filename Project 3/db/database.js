@@ -1,9 +1,9 @@
-/**
+/*
  * db/database.js  –  Project 3: Database Integration (DecodeLabs)
- *
- * Pillar 1 – The Blueprint : Schema with PK, NOT NULL, UNIQUE, CHECK
- * Pillar 2 – The Bridge    : sql.js (pure-JS SQLite), persisted to disk
- * Pillar 4 – The Shield    : Parameterized ? statements throughout
+ 
+  Pillar 1 – Blueprint : Schema with PK, NOT NULL, UNIQUE, CHECK
+  Pillar 2 – The Bridge    : sql.js (pure-JS SQLite), persisted to disk
+  Pillar 4 – The Shield    : Parameterized ? statements throughout
  */
 
 const initSqlJs = require('sql.js');
@@ -14,17 +14,17 @@ const DB_PATH = path.join(__dirname, '..', 'decodelabs.db');
 
 let _db = null;
 
-/** Flush in-memory DB to disk */
+/* Flush in-memory DB to disk */
 function persist() {
   const data = _db.export();
   fs.writeFileSync(DB_PATH, Buffer.from(data));
 }
 
-/**
- * Thin wrapper that gives routes a better-sqlite3-style API:
- *   db.prepare(sql).all(...params)
- *   db.prepare(sql).get(...params)
- *   db.prepare(sql).run(...params)  → { lastInsertRowid, changes }
+/*
+   Thin wrapper that gives routes a better-sqlite3-style API:
+    db.prepare(sql).all(...params)
+    db.prepare(sql).get(...params)
+    db.prepare(sql).run(...params)  → { lastInsertRowid, changes }
  */
 function prepare(sql) {
   return {
@@ -74,7 +74,7 @@ async function initDb() {
     ? new SQL.Database(fs.readFileSync(DB_PATH))
     : new SQL.Database();
 
-  // ── SCHEMA ────────────────────────────────────────────────
+  //   SCHEMA 
   _db.run(`
     CREATE TABLE IF NOT EXISTS users (
       id         INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -102,7 +102,7 @@ async function initDb() {
   `);
   persist();
 
-  // ── SEED ─────────────────────────────────────────────────
+  //   SEED 
   const uc = _db.exec('SELECT COUNT(*) FROM users')[0].values[0][0];
   if (uc === 0) {
     _db.run("INSERT INTO users (name,email,age) VALUES ('Ali Hassan','ali@example.com',24)");

@@ -1,7 +1,7 @@
-/**
- * utils/validate.js
- * Shared input-validation helpers.
- * Same API as Project 2 – routes import these before any DB call.
+/*
+  utils/validate.js
+  Shared input validation helpers.
+  Same API as Project 2 routes import these before any DB call.
  */
 
 function validateRequired(fields, body) {

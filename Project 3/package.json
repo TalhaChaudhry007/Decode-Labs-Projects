@@ -1,7 +1,7 @@
 {
 	"name": "decodelabs-project3",
 	"version": "1.0.0",
-	"description": "Project 3 – Database Integration (DecodeLabs Full Stack Training)",
+	"description": "Project 3 – Database Integration (Full Stack Development)",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",

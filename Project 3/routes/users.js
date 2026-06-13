@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
   res.status(200).json({ success: true, data: user });
 });
 
-// CREATE  (HTTP POST → SQL INSERT)
+// CREATE 
 router.post('/', (req, res) => {
   const { name, email, age } = req.body;
   const missing = validateRequired(['name', 'email', 'age'], req.body);
@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
   }
 });
 
-// UPDATE  (HTTP PUT → SQL UPDATE)
+// UPDATE 
 router.put('/:id', (req, res) => {
   const existing = db.prepare('SELECT * FROM users WHERE id = ?').get(req.params.id);
   if (!existing) return res.status(404).json({ success: false, message: 'User not found' });
@@ -69,7 +69,7 @@ router.put('/:id', (req, res) => {
   }
 });
 
-// DELETE  (HTTP DELETE → SQL DELETE)
+// DELETE 
 router.delete('/:id', (req, res) => {
   const existing = db.prepare('SELECT id FROM users WHERE id = ?').get(req.params.id);
   if (!existing) return res.status(404).json({ success: false, message: 'User not found' });
